@@ -20,6 +20,7 @@ const Experience = () => {
         // console.log("useFrame",state)
         console.log(scroll.offset)
         boxRef.current.rotation.y += scroll.offset * vel;
+        boxRef.current.position.z += scroll.offset * vel;
         if(Math.abs(boxRef.current.rotation.y - 3.14)  > 1.15){
             vel *= -1;
         }
@@ -34,7 +35,7 @@ const Experience = () => {
   return (
     <>
     <Scroll></Scroll>
-    <group scale={.2} rotation={[0,Math.PI,0]} position={[0,-1.25,0]} ref={boxRef}>
+    <group scale={.15} rotation={[0,Math.PI,0]} position={[0,-1.25,0]} ref={boxRef}>
         {/* <mesh name="myWeirdBox" rotation={[0,Math.PI * 1,0]} scale={[2,3,1]}>
         <boxGeometry>
         </boxGeometry>
